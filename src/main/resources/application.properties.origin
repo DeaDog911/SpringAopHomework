@@ -1,0 +1,9 @@
+spring.application.name=SpringAOPHomework
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.database=postgresql
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
