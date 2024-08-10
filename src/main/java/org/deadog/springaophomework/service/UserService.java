@@ -1,10 +1,9 @@
-package org.deadog.springaophomework.services;
+package org.deadog.springaophomework.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.deadog.springaophomework.annotations.Logging;
 import org.deadog.springaophomework.annotations.Timer;
-import org.deadog.springaophomework.exceptions.ApplicationException;
 import org.deadog.springaophomework.model.Order;
 import org.deadog.springaophomework.model.User;
 import org.deadog.springaophomework.repository.OrderRepository;
@@ -58,7 +57,4 @@ public class UserService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
-
-    @Timer
-    public void voidMethod() {}
 }

@@ -12,7 +12,7 @@ import java.util.Arrays;
 @Aspect
 @Component
 public class LoggingAspect {
-    private static final Logger logger = LogManager.getLogger(LoggingAspect.class);
+    private static Logger logger = LogManager.getLogger(LoggingAspect.class);
 
     @Pointcut("@within(org.deadog.springaophomework.annotations.Logging)")
     public void loggingPointcut() {}

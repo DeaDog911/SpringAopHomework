@@ -1,6 +1,5 @@
-package org.deadog.springaophomework.services;
+package org.deadog.springaophomework.service;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.deadog.springaophomework.annotations.Logging;
 import org.deadog.springaophomework.exceptions.ApplicationException;
