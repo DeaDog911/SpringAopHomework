@@ -17,6 +17,7 @@ import org.springframework.aop.framework.DefaultAopProxyFactory;
 
 import javax.swing.text.html.Option;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -81,12 +82,17 @@ class UserServiceTest {
     void getUserWithOrders_shouldReturnUserWithOrders_whenUserExists() {
         User user = new User();
         Order order = new Order();
+
+        List<Order> orders = Collections.singletonList(order);
+        user.setOrders(orders);
+
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-        when(orderRepository.findAllByUserId(1L)).thenReturn(Collections.singletonList(order));
+        when(orderRepository.findAllByUserId(1L)).thenReturn(orders);
 
         User foundUser = userService.getUserWithOrders(1L);
 
         assertNotNull(foundUser);
+        assertEquals(user, foundUser);
         assertEquals(1, foundUser.getOrders().size());
     }
 
